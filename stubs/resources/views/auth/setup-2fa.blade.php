@@ -1,6 +1,14 @@
 @extends('public._layout')
 
 @section('main')
+    <div class="login">
+        <img src="/images/logo.png" class="logo">
+    @if (session('status'))
+        <div>
+            {{ session('status') }}
+        </div>
+    @endif
+
     @if ($errors->any())
         <div>
             <div>{{ __('Whoops! Something went wrong.') }}</div>
@@ -13,8 +21,14 @@
         </div>
     @endif
 
-    <form method="POST" action="{{ route('password.confirm') }}">
+    <form method="POST" action="{{ route('two-factor.enable') }}">
         @csrf
+
+{{--
+        <div>
+            <label>{{ __('Email') }}</label>
+            <input type="email" name="email" value="{{ old('email') }}" required autofocus />
+        </div>
 
         <div>
             <label>{{ __('Password') }}</label>
@@ -22,15 +36,21 @@
         </div>
 
         <div>
-            <button type="submit">
-                {{ __('Confirm Password') }}
-            </button>
+            <label>{{ __('Remember me') }}</label>
+            <input type="checkbox" name="remember">
         </div>
 
         @if (Route::has('password.request'))
             <a href="{{ route('password.request') }}">
-                {{ __('Forgot Your Password?') }}
+                {{ __('Forgot your password?') }}
             </a>
         @endif
+--}}
+
+        <div>
+            <button type="submit">
+               {{ __('Login') }}
+            </button>
+        </div>
     </form>
 @endsection

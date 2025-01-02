@@ -1,6 +1,6 @@
-@extends('layouts.app')
+@extends('public._layout')
 
-@section('content')
+@section('main')
     @if ($errors->any())
         <div>
             <div>{{ __('Whoops! Something went wrong.') }}</div>
@@ -29,13 +29,13 @@
         </div>
 
         <div>
-            <label>{{ __('Confirm Password') }}</label>
+            <label>{{ __('Confirm password') }}</label>
             <input type="password" name="password_confirmation" required autocomplete="new-password" />
         </div>
 
         <div>
             <button type="submit">
-                {{ __('Reset Password') }}
+                {{ __('Reset password') }}
             </button>
         </div>
     </form>

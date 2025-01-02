@@ -1,6 +1,6 @@
-@extends('layouts.app')
+@extends('public._layout')
 
-@section('content')
+@section('main')
     @if ($errors->any())
         <div>
             <div>{{ __('Whoops! Something went wrong.') }}</div>

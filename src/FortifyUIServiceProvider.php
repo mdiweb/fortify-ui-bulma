@@ -7,6 +7,7 @@ use Zacksmash\FortifyUI\Commands\FortifyUICommand;
 
 class FortifyUIServiceProvider extends ServiceProvider
 {
+    // foo=bar
     public function boot()
     {
         if ($this->app->runningInConsole()) {
